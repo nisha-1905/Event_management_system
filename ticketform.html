@@ -1,0 +1,161 @@
+<HTML>
+ <HEAD>
+ <TITLE> TICKETS </TITLE>
+ <STYLE>
+ BODY
+ {
+ BACKGROUND-IMAGE: URL('BLUEWH.JPG');
+ BACKGROUND-SIZE: COVER;
+ TEXT-ALIGN: CENTER;
+ }
+ #SDI
+ {
+ MARGIN: 20PX;
+ BORDER: SOLID BLUE;
+ BACKGROUND-COLOR: CYAN;
+ MARGIN: 0 450PX;
+ WIDTH: 600PX;
+ PADDING: 10PX;
+ BORDER-RADIUS: 20PX;
+ }
+ .LENS
+ {
+ MARGIN: 20PX;
+ PADDING: 5PX;
+ }
+ input
+ {
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid grey;
+ border-radius: 40px;
+ }
+ </STYLE>
+ </HEAD>
+ <BODY>
+ <DIV CLASS = "LENS">
+ <FONT COLOR = RED SIZE = 10> TICKETS </FONT>
+ </DIV>
+ <FORM NAME = "tic" onsubmit="ticket()">
+ <DIV ID = "SDI">
+ <TABLE cellpadding = 1>
+ <TR>
+ <TD> FIRST NAME*</TD>
+ <TD ALIGN = "LEFT"> LAST NAME* </TD>
+ </TR>
+ <TR>
+ <TD> <INPUT TYPE = "TEXT" PLACEHOLDER = "FIRST NAME"
+SIZE = "30" name = first> </TD>
+ <TD ALIGN = "RIGHT"> <INPUT TYPE = "TEXT" PLACEHOLDER
+= "LAST NAME" SIZE = "30" name = last> </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = "2"> EMAIL* </TD>
+ </TR>
+ <TR>
+ <TD> <INPUT TYPE = "EMAIL" SIZE = "30" name = email>
+</TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = "2"> ADDRESS* </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = "2"> <INPUT TYPE = "TEXT" SIZE = "70"
+name = add></TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = "2"> <INPUT TYPE = "TEXT" SIZE =
+"70"></TD>
+ </TR>
+ <TR>
+ <TD> <INPUT TYPE = "TEXT" PLACEHOLDER = "CITY" SIZE =
+30 name = add> </TD>
+ <TD ALIGN = "RIGHT"> <INPUT TYPE = "TEXT" PLACEHOLDER
+= "REGION" SIZE = 30 name = add> </TD>
+ </TR>
+ <TR>
+ <TD> <INPUT TYPE = "TEXT" PLACEHOLDER = "POSTAL/ZIP
+CODE" SIZE = 30 name = add> </TD>
+ <TD ALIGN = "RIGHT"> <INPUT TYPE = "TEXT" PLACEHOLDER
+= "ROMANIA" SIZE = 30> </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = "2"> HOW DO YOU WANT TO GET YOUR
+TICKETS? </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = "2"> <SELECT NAME = "TICKETS">
+ <OPTION> ONLINE </OPTION>
+ <OPTION> OFFLINE </OPTION>
+ </SELECT>
+ </TD>
+ </TR>
+ <TR>
+ <TD> MY PRODUCTS: </TD>
+ </TR>
+ <TR>
+ <TD ALIGN = RIGHT> <INPUT TYPE = "CHECKBOX" NAME =
+"my" VALUE = ONLINE> </TD>
+ <TD> ONLINE TICKETS $15.00 </TD>
+ </TR>
+ <TR>
+ <TD ALIGN = RIGHT> <INPUT TYPE = "CHECKBOX" NAME =
+"my" VALUE = OFFLINE> </TD>
+ <TD> OFFLINE TICKETS $10.00 </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = "2"> PAYMENT METHOD </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = "2"> <A HREF = PROJECT.HTML> <IMG SRC =
+"PAYTM.JPG" HEIGHT = "30" WEIGHT = "40" > </A></TD>
+ </TR>
+ <TR>
+ <TD> <A HREF = PROJECT.HTML>BACK</A> </TD>
+ <TD COLSPAN = "2" ALIGN = CENTER> <INPUT TYPE =
+"SUBMIT"> </TD>
+ </TR>
+ </TABLE>
+ </DIV>
+ </FORM>
+ <script>
+ function ticket()
+ {
+ var first = document.tic.first.value;
+ var last = document.tic.last.value;
+ var email = document.tic.email.value;
+ var address = document.tic.add.value;
+ var product = document.tic.my;
+ if(!first.match(/^[a-zA-Z]{,5}$/))
+ {
+ alert("Enter name within the range");k
+ }
+ if(!last.match(/^[a-zA-Z]{,5}$/))
+ {
+ alert("Enter last name within the range");
+ }
+ if(!email.match(/^[a-zA-Z]{3,}[0-9]+@[a-z]{5,}$/))
+ {
+ alert("ENter the email correctly");
+ }
+ if(!address.match(/^[a-zA-Z]{1,}w+[0-9]+$/))
+ {
+ alert("Enter the address correctly");
+ }
+ var check=0;
+ for(var i=0;i<my.length;i++)
+ {
+ if(my[i].checked)
+ {
+ check=1;
+ alert(my[i].value);
+ }
+ }
+ if(check==0)
+ {
+ alert("You have select atleast one my");
+ }
+ }
+ </script>
+ </BODY>
+</HTML>

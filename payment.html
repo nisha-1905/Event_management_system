@@ -1,0 +1,106 @@
+<HTML>
+ <HEAD>
+ <TITLE> PAYMENT </TITLE>
+ <STYLE>
+ BODY {
+ BACKGROUND-IMAGE: URL('GREE.JPG');
+ BACKGROUND-SIZE: COVER;
+ }
+ #PAY {
+ MARGIN: 40PX;
+ PADDING: 10PX;
+ }
+ #TAB {
+ MARGIN: 60PX auto;
+ BORDER: SOLID GREEN;
+ PADDING: 20PX;
+ WIDTH: 450PX;
+ BORDER-RADIUS: 20PX;
+ }
+ input, SELECT {
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid grey;
+ border-radius: 10px;
+ width: 200px;
+ }
+ </STYLE>
+ </HEAD>
+ <BODY BGCOLOR = GRAY ALIGN = CENTER>
+ <DIV ID=PAY>
+ <FONT COLOR=RED SIZE="10"> PAYMENT </FONT>
+ </DIV>
+ <FORM NAME="payment" onsubmit="card()"></FORM>
+ <DIV ID=TAB>
+ <TABLE ALIGN=CENTER cellpadding=10>
+ <TR>
+ <TD> NAME: </TD>
+ <TD> <INPUT TYPE="TEXT" name="name"> </TD>
+ </TR>
+ <TR>
+ <TD> CARD NUMBER : </TD>
+ <TD> <INPUT TYPE="TEXT" name="ph"> </TD>
+ </TR>
+ <TR>
+ <TD> CARD EXPIRY DATE : </TD>
+ <TD> <INPUT TYPE="DATE" name="date"> </TD>
+ <TD>
+ <SELECT name="year">
+ <OPTION> 2021 </OPTION>
+ <OPTION> 2022 </OPTION>
+ <OPTION> 2023 </OPTION>
+ </SELECT>
+ </TD>
+ </TR>
+ <TR>
+ <TD> CARD CVV </TD>
+ <TD> <INPUT TYPE="TEXT" name="num"> </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN=2 ALIGN=CENTER>
+ <INPUT TYPE="CHECKBOX" NAME="check">
+ SAVE CARD ON FILE?
+ </TD>
+ </TR>
+ <TR>
+ <TD> <A HREF="PROJECT.HTML"> BACK </A></TD>
+ <TD COLSPAN=2 ALIGN=CENTER>
+ <INPUT TYPE="SUBMIT" VALUE="PAY">
+ </TD>
+ </TR>
+ </TABLE>
+ </DIV>
+ </FORM>
+ <script>
+ function card()
+ {
+ var name = document.payment.name.value;
+ var cn = document.payment.ph.value;
+ var date = document.payment.date.value;
+ var cvv = document.payment.num.value;
+ var save = document.payment.check.checked;
+ var select = document.payment.year.value;
+ if(!name.match(/^[a-zA-Z\s]{10}$/))
+ {
+ alert("Enter a valid name within the range of 1 to 50 characters.");
+ }
+ if(!cn.match(/^\d{10}$/))
+ {
+ alert("Enter a valid 10-digit phone number."); }
+ if(date==='')
+ {
+ alert("Please select the card expiry date."); }
+ if(!cvv.match(/^\d{3,4}$/))
+ {
+ alert("Enter a valid CVV (3 or 4 digits)."); }
+ if(!save)
+ {
+ alert("Please select to save the card on file."); }
+ if(select=='')
+ {
+ alert("Please select the dropdown");
+ }
+ }
+ </script>
+ </BODY>
+</HTML>

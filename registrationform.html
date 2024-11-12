@@ -1,0 +1,94 @@
+<html>
+<head>
+<style>
+ body
+ {
+ background-color: WHITE;
+ text-align: center;
+ padding: 50px;
+ }
+
+.registration-form
+ {
+ background-color: DARKGREY;
+ padding: 20px;
+ border-radius: 30px;
+ max-width: 400px;
+ margin: auto;
+ }
+
+h1
+ {
+ color: blue;
+ }
+
+form
+ {
+ display: flex;
+ flex-direction: column;
+ }
+
+input
+ {
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid grey;
+ border-radius: 30px;
+ }
+ SELECT
+ {
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid grey;
+ border-radius: 30px;
+ }
+ INPUT[TYPE=SUBMIT]
+ {
+ BACKGROUND-COLOR: GREEN;
+ }
+ </style>
+</head>
+<body>
+ <div class="registration-form">
+ <h1>Event Registration</h1>
+ <form name = reg onsubmit="validatee()">
+ Name:
+ <input type="text" name="name"><br>
+ Email:
+ <input type="email" name="email"><br>
+ phone:
+ <input type="tel" name="phone"><br>
+ select event:
+ <select id="event" name="event">
+ <option value="event1">---------------------------------please enter------
+--------------------------</option>
+ <option value="event2">Event 1</option>
+ <option value="event3">Event 2</option>
+ <option value="event4">Event 3</option>
+ </select><br>
+ <input type="submit" value="Register">
+ </form>
+ </div>
+ <A HREF = PROJECT.HTML> BACK </A>
+ <script>
+ function validatee()
+ {
+ var name = document.reg.name.value;
+ var email = document.reg.email.value;
+ var phone = document.reg.phone.value;
+ if(!name.match(/^[a-zA-Z]{5,15}$/))
+ {
+ alert("Enter name with the range");
+ }
+ if(!email.match(/^[a-zA-Z]{3,}[0-9]+@[a-z]{,5}$/))
+ {
+ alert("Enter email correctly");
+ }
+ if(!phone.match(/^d{15}$/))
+ {
+ alert("Enter phone number correctly");
+ }
+ }
+ </script>
+</body>
+</html>

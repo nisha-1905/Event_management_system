@@ -1,0 +1,119 @@
+<HTML>
+ <HEAD>
+ <TITLE> NEW USER </TITLE>
+ <STYLE>
+ BODY
+ {
+ BACKGROUND-IMAGE: URL('GREY.JPG');
+ BACKGROUND-SIZE: COVER;
+ }
+ #REV
+ {
+ MARGIN: 30PX;
+ MARGIN: 100PX 450PX;
+ BORDER: SOLID BLACK;
+ WIDTH: 600PX;
+ PADDING: 10PX;
+ }
+ TR
+ {
+ COLOR: WHITE;
+ }
+ .LEN
+ {
+ MARGIN: 10PX;
+ PADDING: 20PX;
+ }
+ </STYLE>
+ </HEAD>
+ <BODY ALIGN = CENTER>
+ <DIV CLASS = "LEN">
+ <FONT COLOR = BLACK SIZE = 20> NEW USER FORM </FONT>
+ </DIV>
+ <DIV ID = REV>
+ <FORM NAME = ree onsubmit="regis()">
+ <TABLE>
+ <TR>
+ <TD > FIRST NAME* </TD>
+ <TD ALIGN = LEFT> LAST NAME* </TD>
+ </TR>
+ <TR>
+ <TD> <INPUT TYPE = TEXT placeholder = FIRST SIZE = "30" name =
+first> </TD>
+ <TD> <INPUT TYPE = TEXT placeholder = LAST SIZE = "33" name =
+last> </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = 2> USERNAME* </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = 2> <INPUT TYPE = TEXT PLACEHOLDER = USERNAME
+SIZE = 70 name = user> </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = 2> EMAIL* </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = 2> <INPUT TYPE = EMAIL placeholder = EMAIL SIZE
+= 30 name = email> </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = 2> PHONE NUMBER* </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = 2> <INPUT TYPE = TEXT SIZE = 70 name = ph> </TD>
+ </TR>
+ <TR>
+ <TD> PASSWORD* </TD>
+ </TR>
+ <TR>
+ <TD COLSPAN = 2> <INPUT TYPE = text SIZE = 70 name = pas>
+</TD>
+ </TR>
+ <TR>
+ <TD> SHORT BIO* </TD>
+ </TR>
+ <TR>
+ <TD> <INPUT TYPE = SUBMIT VALUE = SUBMIT name = bio> </TD>
+ <TD> <A HREF = "PROJECT.HTML"> BACK </A> </TD>
+ </TR>
+ </DIV>
+ </TABLE>
+</form>
+ <script>
+ function regis()
+ {
+ var first = document.ree.first.value;
+ var last = document.ree.last.value;
+ var user = document.ree.user.value;
+ var email = document.ree.email.value;
+ var phone = document.ree.ph.value;
+ var password = document.ree.pas.value;
+ if(!first.match(/^[a-zA-Z]{5}$/))
+ {
+ alert("Enter first name within the range");
+ }
+ if(!last.match(/^[a-zA-Z]{5}$/))
+ {
+ alert("Enter last name within the range");
+ }
+ if(!user.match(/^[0-9]{7}$/))
+ {
+ alert("Enter the user-id correctly");
+ }
+ if(!email.match(/^[a-zA-Z]{3,}[0-9]+@[a-z]{5,}$/))
+ {
+ alert("Enter email correctly")
+ }
+ if(!phone.match(/^d{10}$/))
+ {
+ alert("Enter correct phone number");
+ }
+ if(!password.match(/^[a-zA-Z]{4,}[0-9]{,3}$/))
+ {
+ alert("Enter correct password");
+ }
+ }
+ </script>
+</BODY>
+</HTML>

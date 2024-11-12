@@ -1,0 +1,87 @@
+<HTML>
+ <HEAD>
+ <TITLE> LOGIN </TITLE>
+ <STYLE>
+ BODY
+ {
+ BACKGROUNd-COLOR: ROYALBLUE;
+ BACKGROUND-SIZE: COVER;
+ }
+ #SD
+ {
+ MARGIN: 20PX;
+ BORDER: SOLID BLUE;
+ WIDTH: 450PX;
+ MARGIN: 15PX 500PX;
+ BACKGROUND-COLOR: DEEPSKYBLUE;
+ border-radius: 30px;
+ }
+ INPUT[TYPE=SUBMIT]
+ {
+ BACKGROUND-COLOR: red;
+ COLOR: WHITE;
+ MARGIN: 4PX 50PX;
+ }
+ input
+ {
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid grey;
+ border-radius: 40px;
+ MARGIN-RIGHT: 40PX;
+ }
+ </STYLE>
+ </HEAD>
+ <BODY ALIGN = CENTER>
+ <DIV ID = "SD">
+ <FORM NAME = "login" onsubmit="validate()">
+ <TABLE ALIGN = CENTER CELLPADDING = 10>
+ <TR ALIGN = CENTER>
+ <TD COLSPAN = 2> <IMG SRC = USER.JPG HEIGHT = 300 WIDTH =
+300></TD>
+ </TR>
+ <TR>
+ <TH COLSPAN = "2"> <FONT COLOR = "RED" SIZE = "5"> USER
+LOGIN FORM </FONT> </TH>
+ </TR>
+ <TR>
+ <TH COLSPAN = "2"> <P><U> LOGIN CREDENTIAL </U></P></TH>
+ </TR>
+ <TR>
+ <TD ALIGN = CENTER> USER-ID : </TD>
+ <TD> <INPUT TYPE = "TEXT" name = "user"> </TD>
+ </TR>
+ <TR>
+ <TD ALIGN = CENTER> PASSWORD : </TD>
+ <TD> <INPUT TYPE = text name = "pass"> </TD>
+ </TR>
+ <TR>
+ <TD ALIGN = CENTER> <A HREF = "PROJECT.HTML"> BACK
+</A></TD>
+ <TD ALIGN = LEFT> <INPUT TYPE = "SUBMIT" VALUE = "LOGIN">
+</TD>
+ </TR>
+ <TR>
+ <TD ALIGN = RIGHT> IF YOU ARE NEW WANT TO SIGN UP? </TD>
+ <TD> <A HREF = "NEW.HTML">SIGN UP</A></TD>
+ </TR>
+ </TABLE>
+ </DIV>
+ </FORM>
+ <script>
+ function validate()
+ {
+ var user = document.login.user.value;
+ var password = document.login.pass.value;
+ if(!user.match(/^[a-zA-Z]{5,}$/))
+ {
+ alert("Enter user-id correctly");
+ }
+ if(!password.match(/^d{4}$/))
+ {
+ alert("Enter password correctly");
+ }
+ }
+ </script>
+ </BODY>
+</HTML>
